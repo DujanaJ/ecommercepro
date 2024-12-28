@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2024 at 04:29 PM
+-- Generation Time: Jul 04, 2024 at 10:50 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,14 +43,6 @@ CREATE TABLE `carts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `carts`
---
-
-INSERT INTO `carts` (`id`, `name`, `email`, `phone`, `address`, `product_title`, `price`, `quantity`, `image`, `Product_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(2, 'user@gmail.com', 'user@gmail.com', NULL, NULL, 'Female Shoe', '210', '1', '1719234565.webp', '2', '1', '2024-06-24 07:14:07', '2024-06-24 07:14:07'),
-(3, 'user@gmail.com', 'user@gmail.com', NULL, NULL, 'Coffee Maker', '620', '2', '1719234704.jpg', '4', '1', '2024-06-24 07:14:19', '2024-06-24 07:14:19');
-
 -- --------------------------------------------------------
 
 --
@@ -69,10 +61,12 @@ CREATE TABLE `catagories` (
 --
 
 INSERT INTO `catagories` (`id`, `catagory_name`, `created_at`, `updated_at`) VALUES
-(1, 'Men', '2024-06-24 07:06:50', '2024-06-24 07:06:50'),
-(2, 'Female', '2024-06-24 07:06:56', '2024-06-24 07:06:56'),
-(3, 'Furniture', '2024-06-24 07:07:01', '2024-06-24 07:07:01'),
-(4, 'Electronics', '2024-06-24 07:07:12', '2024-06-24 07:07:12');
+(5, 'Women', '2022-04-29 12:08:47', '2022-04-29 12:08:47'),
+(6, 'Men', '2022-04-29 12:08:54', '2022-04-29 12:08:54'),
+(7, 'Mobile', '2022-04-29 12:09:04', '2022-04-29 12:09:04'),
+(8, 'Toy', '2022-04-29 12:09:15', '2022-04-29 12:09:15'),
+(9, 'Laptop', '2022-04-29 12:09:22', '2022-04-29 12:09:22'),
+(10, 'electric', '2022-07-11 18:54:42', '2022-07-11 18:54:42');
 
 -- --------------------------------------------------------
 
@@ -94,7 +88,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `name`, `comment`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'user@gmail.com', 'scvb', '1', '2024-06-24 07:49:56', '2024-06-24 07:49:56');
+(1, 'user', 'This website is really Awesome', '20', '2022-06-17 23:13:30', '2022-06-17 23:13:30'),
+(2, 'user', 'Thanks for this amazing website', '20', '2022-06-17 23:13:49', '2022-06-17 23:13:49');
 
 -- --------------------------------------------------------
 
@@ -111,6 +106,14 @@ CREATE TABLE `contacts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'yamin', 'yamin@gmail.com', '\r\nCreate your account\r\nOr by using the registration form\r\n\r\nFirst name\r\nLast name\r\nUsername\r\nEmail\r\nPassword\r\nBy signing up to Codester you confirm that you agree with the member terms and conditions\r\n\r\nDo you already have an account?\r\nCreate your account\r\nOr by using the registration form\r\n\r\nFirst name\r\nLast name\r\nUsername\r\nEmail\r\nPassword\r\nBy signing up to Codester you confirm that you agree with the member terms and conditions\r\n\r\nDo you already have an account?', 'Message test', '2022-06-17 23:24:15', '2022-06-17 23:24:15'),
+(2, 'yamin', 'user@gmail.com', 'This is a test', 'message test 2', '2022-06-17 23:24:50', '2022-06-17 23:24:50');
 
 -- --------------------------------------------------------
 
@@ -153,12 +156,19 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2022_03_08_102931_create_sessions_table', 1),
 (7, '2022_03_19_154016_create_catagories_table', 1),
 (8, '2022_03_31_033548_create_products_table', 1),
-(9, '2022_04_30_093651_create_carts_table', 1),
-(10, '2022_05_21_161747_create_orders_table', 1),
-(11, '2022_06_04_162847_create_notifications_table', 1),
-(12, '2022_06_17_050024_create_contacts_table', 1),
-(13, '2022_06_18_051158_create_comments_table', 1),
-(14, '2022_06_18_051209_create_replies_table', 1);
+(9, '2022_04_30_092757_create_carts_table', 2),
+(10, '2022_04_30_093651_create_carts_table', 3),
+(11, '2022_05_16_173817_create_testorders_table', 4),
+(12, '2022_05_21_143059_create_orders_table', 5),
+(13, '2022_05_21_161747_create_orders_table', 6),
+(14, '2022_06_04_162847_create_notifications_table', 7),
+(15, '2022_06_09_014307_create_commenttests_table', 8),
+(16, '2022_06_09_014322_create_replytests_table', 8),
+(17, '2022_06_11_153628_create_comments_table', 9),
+(18, '2022_06_11_153646_create_replies_table', 9),
+(19, '2022_06_17_050024_create_contacts_table', 10),
+(20, '2022_06_18_051158_create_comments_table', 10),
+(21, '2022_06_18_051209_create_replies_table', 10);
 
 -- --------------------------------------------------------
 
@@ -206,7 +216,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `address`, `user_id`, `product_title`, `quantity`, `price`, `image`, `product_id`, `payment_status`, `delivery_status`, `created_at`, `updated_at`) VALUES
-(1, 'user@gmail.com', 'user@gmail.com', NULL, NULL, '1', 'Shoe Rack', '1', '120', '1719234741.webp', '5', 'cash on delivery', 'processing', '2024-06-24 07:13:57', '2024-06-24 07:13:57');
+(59, 'user', 'user@gmail.com', '0101902', 'Dhaka , Bangladesh', '20', 'Laptop', '1', '199', '1720082792.jpg', '6', 'cash on delivery', 'processing', '2024-07-04 02:49:19', '2024-07-04 02:49:19'),
+(60, 'user', 'user@gmail.com', '0101902', 'Dhaka , Bangladesh', '20', 'Botique For Women', '1', '122', '1720082821.jpg', '4', 'cash on delivery', 'processing', '2024-07-04 02:49:19', '2024-07-04 02:49:19');
 
 -- --------------------------------------------------------
 
@@ -219,6 +230,14 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('yaminshakil10@gmail.com', '$2y$10$Xo2MKu1a7B311jQ3VFlm2O1KPDr/2tIEWnKXn30j2C79aao8twaGa', '2022-06-04 03:52:43'),
+('yaminshakil7@gmail.com', '$2y$10$pBKiiOXmVAlLf9G0PWYNveKKRS5mhKwyn53QzL0cbxyZFNoInhZly', '2022-06-16 00:57:31');
 
 -- --------------------------------------------------------
 
@@ -262,11 +281,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `image`, `catagory`, `quantity`, `price`, `discount_price`, `created_at`, `updated_at`) VALUES
-(1, 'Men Shoe', 'The Ultimate Guide to Men\'s Footwear is here. We have all the types of shoes all men should own for a versatile style and for any occasion.', '1719234493.jpg', 'Men', '25', '250', '220', '2024-06-24 07:08:13', '2024-06-24 07:08:13'),
-(2, 'Female Shoe', 'In Western culture, it is women who generally wear more architecturally significant or decorous foot coverings.', '1719234565.webp', 'Female', '30', '220', '210', '2024-06-24 07:09:25', '2024-06-24 07:09:25'),
-(3, 'Mini Freezer', 'FRYKA mini-freezers are the ideal solution when small samples directly cooled in the workplace should be available.', '1719234660.jpg', 'Electronics', '10', '350', '340', '2024-06-24 07:11:00', '2024-06-24 07:11:00'),
-(4, 'Coffee Maker', 'A coffee maker is composed of a heating plate on the bottom, a glass pitcher to catch the coffee in, a water reserve tank, a cup of to hold coffee grounds, and a tube to tie this all together.', '1719234704.jpg', 'Electronics', '15', '320', '310', '2024-06-24 07:11:44', '2024-06-24 07:11:44'),
-(5, 'Shoe Rack', 'A shoe rack is a furniture which is often found by the door mat in the entryway of houses, and serves a function to keep shoes organized.', '1719234741.webp', 'Furniture', '15', '150', '120', '2024-06-24 07:12:21', '2024-06-24 07:12:21');
+(2, 'Shirt', 'This is a unique shirt', '1720082849.avif', 'Men', '10', '20', '17', '2022-04-29 12:11:00', '2024-07-04 02:47:29'),
+(3, 'Neclace', 'Dr\'s gift Uncharted 4 Nathan Drake Ring Necklace Engraved Pendant with Adjustable Leather Chain Handmade', '1720082837.jpg', 'Women', '12', '200', '166', '2022-04-29 12:12:41', '2024-07-04 02:47:17'),
+(4, 'Botique For Women', 'boutique fashions, trendy clothing and fab looks that are fun and affordable. Enjoy free shipping on orders over $99', '1720082821.jpg', 'Women', '12', '200', '122', '2022-04-29 12:13:40', '2024-07-04 02:47:01'),
+(5, 'toy', 'Best Toy ever', '1720082808.webp', 'Toy', '16', '200', NULL, '2022-04-29 12:14:00', '2024-07-04 02:46:48'),
+(6, 'Laptop', 'super laptop', '1720082792.jpg', 'Laptop', '13', '199', NULL, '2022-04-29 12:14:42', '2024-07-04 02:46:32'),
+(7, 'Samsung Mobile', 'Latest mobile that you can buy online', '1720082779.webp', 'Mobile', '10', '380', NULL, '2022-04-29 12:16:46', '2024-07-04 02:46:19');
 
 -- --------------------------------------------------------
 
@@ -283,6 +303,14 @@ CREATE TABLE `replies` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `replies`
+--
+
+INSERT INTO `replies` (`id`, `name`, `comment_id`, `reply`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'customer', '1', 'I agree with you', '23', '2022-06-17 23:14:30', '2022-06-17 23:14:30'),
+(2, 'admin', '2', 'Thank you very much . we really appreciate it.', '21', '2022-06-18 00:36:47', '2022-06-18 00:36:47');
 
 -- --------------------------------------------------------
 
@@ -304,7 +332,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('ZHoteu12ddeIZQsvZIFtfAzBFxqQzL22vvoJLR3w', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiYkVoN3NjdU8xU1dqTThRRjIzS2NxNnBuUUxZMUtObVg1SnV6NndDeCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRwV2ZCbEJ2eS5jUnZnRkVUVGI5WUhPM2VCM09iTDg3QVVpNE5xdllNa2plekxvZXk5TU1zbSI7czo1OiJhbGVydCI7YTowOnt9fQ==', 1719236996);
+('r41cZE6IOJA4F9AzLqPcJ08zThnoHbyQ3OrdvzSa', 21, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNmE3c1AxaktYeUNYclFMMlZkVFdEUmF2T1dIeDU1S3p4RGZaSVBvTSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcmludF9wZGYvNjAiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyMTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJDVFRENoMUFGUkpCaFpWNC84T1N0a2V3UnNXd3BIeDhMNDd0SHUzNW5ZdnNrOUdQbVJIZzVDIjt9', 1720083010);
 
 -- --------------------------------------------------------
 
@@ -323,7 +351,6 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `two_factor_secret` text DEFAULT NULL,
   `two_factor_recovery_codes` text DEFAULT NULL,
-  `two_factor_confirmed_at` timestamp NULL DEFAULT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
   `profile_photo_path` varchar(2048) DEFAULT NULL,
@@ -335,9 +362,14 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `usertype`, `phone`, `address`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'user@gmail.com', 'user@gmail.com', '0', NULL, NULL, '2024-06-01 14:01:04', '$2y$10$pWfBlBvy.cRvgFETTb9YHO3eB3ObL87AUi4NqvYMkjezLoey9MMsm', NULL, NULL, NULL, NULL, NULL, NULL, '2024-06-24 07:05:05', '2024-06-24 07:05:05'),
-(2, 'admin', 'admin@gmail.com', '1', NULL, NULL, '2024-06-08 14:01:08', '$2y$10$TxmXyQZBW6DZkTuvJQJM6urxq7YangyfPkWf7lqYASiv/7PYlMVba', NULL, NULL, NULL, NULL, NULL, NULL, '2024-06-24 07:06:17', '2024-06-24 07:06:17');
+INSERT INTO `users` (`id`, `name`, `email`, `usertype`, `phone`, `address`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
+(20, 'user', 'user@gmail.com', '0', '0101902', 'Dhaka , Bangladesh', '2022-06-04 06:23:34', '$2y$10$x.Lug4cp70YyvH84h/3vOOjlL4Hh5tXTJVrQyb1OqOnKE90MDMRwy', NULL, NULL, NULL, NULL, NULL, '2022-04-29 12:06:59', '2022-06-16 23:15:28'),
+(21, 'admin', 'admin@gmail.com', '1', '0101902021', 'admin live on mars', '2022-06-03 06:23:56', '$2y$10$5EDCh1AFRJBhZV4/8OStkewRsWwpHx8L47tHu35nYvsk9GPmRHg5C', NULL, NULL, NULL, NULL, NULL, '2022-04-29 12:07:31', '2022-04-29 12:07:31'),
+(22, 'yamin', 'yamin@gmail.com', '0', '11212121', 'Canada', NULL, '$2y$10$6QCujSYdioEcDm.wO/.4k.l6OXkPSNywDX.Y44CWFDtwX8WFU1xOS', NULL, NULL, NULL, NULL, NULL, '2022-05-05 03:19:56', '2022-05-05 03:19:56'),
+(23, 'customer', 'customer@gmail.com', '0', '14874512', 'usa', '2022-06-15 18:00:02', '$2y$10$DhNDzX5E8i.L2ZHIRsKUoOIkBxTSolzfV0Fn1QjmVn17QbZ0K9pNq', NULL, NULL, NULL, NULL, NULL, '2022-05-05 03:21:06', '2022-05-05 03:21:06'),
+(30, 'yamin', 'yaminshakil7@gmail.com', '0', '111111111111', 'aaaaaaaaaa', '2022-07-11 13:43:56', '$2y$10$V31zL6iCC240glyh9cjo.u8jMdx0cNlu4Kwgf6Y8bwQpzF4F8woEK', NULL, NULL, NULL, NULL, NULL, '2022-07-11 13:43:44', '2022-07-11 13:43:56'),
+(31, 'yamin', 'yaminshakil10@gmail.com', '0', '20194885767', 'dhaka', '2022-07-11 18:50:11', '$2y$10$0qJxvOZPrRFBh9HNoQpN4OqwvWxhRMiAZ7Lfsamwa/JeIzv4QtyUe', NULL, NULL, NULL, NULL, NULL, '2022-07-11 18:49:38', '2022-07-11 18:50:11'),
+(32, 'yamin shakil', 'test@gmail.com', '0', NULL, NULL, NULL, '$2y$10$uuSifYglW1UPBlZF.m/ZB.v3WI1CF7tboggrqpCDaO15F5c4it25a', NULL, NULL, NULL, NULL, NULL, '2024-07-04 01:56:05', '2024-07-04 01:56:05');
 
 --
 -- Indexes for dumped tables
@@ -442,25 +474,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `catagories`
 --
 ALTER TABLE `catagories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -472,13 +504,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -490,19 +522,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

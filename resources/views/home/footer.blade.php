@@ -7,15 +7,15 @@
                         <a href="{{url('/')}}"><img width="210"  src="{{asset('images/websale.png')}}" alt="#" /></a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> Szabist, Karachi</p>
+                        <p><strong>TELEPHONE:</strong> +92 3102737944</p>
+                        <p><strong>EMAIL:</strong> bcsbs2212213@szabist.pk</p>
                       </div>
                    </div>
                </div>
                <div class="col-md-8">
                   <div class="row">
-                  <div class="col-md-7">
+                  <div class="col-md-7">  
                      <div class="row">
                         <div class="col-md-6">
                      <div class="widget_menu">
@@ -72,9 +72,9 @@
 
 
       <div class="cpy_">
-         <p class="mx-auto">© 2022 All Rights Reserved By <a href="https://www.youtube.com/channel/UCeNYDojo4nU2sbHz1sMsBXw/">Web Tech Knowledge</a><br>
+         <p class="mx-auto">© 2022 All Rights Reserved By <a href="#">Dujana Project</a><br>
          
-            Distributed By <a href="https://www.youtube.com/channel/UCeNYDojo4nU2sbHz1sMsBXw" target="_blank">>Web Tech Knowledge</a>
+            Distributed By <a href="#" target="_blank">Dujana Project</a>
          
          </p>
       </div>

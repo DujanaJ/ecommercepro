@@ -28,10 +28,23 @@
       <!-- partial -->
       @include('admin.header')
         <!-- partial -->
-
+ 
 
           <div class="main-panel">
           <div class="content-wrapper">
+
+
+             @if(session()->has('message'))
+
+            <div class="alert alert-success">
+
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+              
+              {{session()->get('message')}}
+              
+            </div>
+
+            @endif
 
 
             <h1 style="text-align: center; font-size: 25px;">Send Email to {{$order->email}}</h1>
